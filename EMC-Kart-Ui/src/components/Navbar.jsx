@@ -1,5 +1,3 @@
-import SignupModal from "./SignupModal"
-
 const Navbar = () => {
     return ( 
         <nav className="bg-gray-800 p-4">
@@ -8,8 +6,8 @@ const Navbar = () => {
                     <span className="text-white text-lg font-semibold">EMCKart</span>
                 </div>
                 <div className="flex items-center">
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Login</a>
-                    <SignupModal />
+                    <a href="/login" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                    <a href="/signup" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Sign up</a>
                 </div>
             </div>
         </nav>

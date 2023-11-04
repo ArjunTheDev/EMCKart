@@ -6,6 +6,7 @@ module.exports = app => {
     // Create a new Tutorial
     router.get("/", users.fetchAll);
     router.post("/register", users.create);
+    router.post("/login", users.validateUser);
 
     app.use("/api/user", router);
 };
