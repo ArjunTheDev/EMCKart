@@ -17,8 +17,9 @@ const Login = () => {
 
   const handleSubmit = async () => {
     dispatch(loginUser(userData)).then((res) => {
-        // console.log(selectUserDetails)
-        // navigate("/")
+        if (!res?.error) {
+          navigate("/")
+        }
     })
   }
 

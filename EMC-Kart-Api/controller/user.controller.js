@@ -62,14 +62,25 @@ exports.validateUser = async(req, res) => {
 }
 
 exports.fetchAll = async (req, res) => {
-    try {
-        const users = await User.find();
-        res.status(200).send(users);
-    } catch (err) {
-        res.status(500).send({
-            message:
-                err.message || "Some error occurred while fetching the User."
-        });
-    }
+  try {
+    const users = await User.find();
+    res.status(200).send(users);
+  } catch (err) {
+    res.status(500).send({
+        message:
+          err.message || "Some error occurred while fetching the User."
+    });
+  }
+}
 
+exports.vaidateToken = async (req, res) => {
+  try {
+    const decodedToken = await firebase.auth().verifyIdToken(req.body.authToken);
+    res.status(200).send(decodedToken);
+  } catch (err) {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while fetching the User."
+  });
+  }
 }
