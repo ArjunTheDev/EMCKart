@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
 require('dotenv').config();
-const firebaseConfig = require("/home/arjun/Documents/firebase/serviceKey.json")
+const firebaseConfig = require("../cred/serviceKey.json")
 
 console.log("Firebase Connected..")
 admin.initializeApp({
