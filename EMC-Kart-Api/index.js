@@ -5,8 +5,9 @@ require("./config/firebase.config")
 
 const app = express();
 
+//Add/Update your frontend url to avoid CORS error
 var corsOptions = {
-  origin: "http://localhost:5173"
+  origin: ["http://localhost:5173", "http://192.168.1.18:5173", "http://192.168.1.4:5173/"]
 };
 
 app.use(cors(corsOptions));
@@ -37,6 +38,7 @@ app.get("/", (req, res) => {
 });
 
 require("./routes/user.routes")(app);
+require("./routes/product.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

@@ -25,11 +25,10 @@ export const registerUser = createAsyncThunk(('user/register'), async(userData, 
     }
 });
 
-//------------Test----------------
+//------------For Test----------------
 export const vaildateToken = createAsyncThunk(('user/validateToken'), async(userData, { rejectWithValue }) => {
     try{
         const token = await getUserAuthToken()
-        console.log(token)
         const userResponse = await axios.post('http://localhost:8080/api/user/validateToken', { authToken: token })
         return userResponse
     } catch (error) {
@@ -39,14 +38,15 @@ export const vaildateToken = createAsyncThunk(('user/validateToken'), async(user
         return rejectWithValue({message: 'Some Other message'})
     }
 });
-//------------Test----------------
+//-----------------------------------
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
     loading: false,
     userData: getDataFromLocalStorage('user') || null,
-    error: null
+    error: null,
+    checkoutProducts: []
   },
   reducers: {
     clearUser: async (state) => {
@@ -55,6 +55,14 @@ const userSlice = createSlice({
         state.loading = false,
         state.userData = null,
         state.error = null
+    },
+    addProductTOCheckout: (state, product) => {
+        const index = state.checkoutProducts.findIndex(checkoutProduct => checkoutProduct.id === product.payload.id);
+        if (index === -1) {
+            state.checkoutProducts.push(product.payload);
+        } else {
+            state.checkoutProducts.splice(index, 1);
+        }
     }
   },
   extraReducers: (builder) => {
@@ -93,6 +101,6 @@ const userSlice = createSlice({
   }
 });
 
-export const { clearUser } = userSlice.actions;
+export const { clearUser, addProductTOCheckout } = userSlice.actions;
 
 export default userSlice.reducer;
