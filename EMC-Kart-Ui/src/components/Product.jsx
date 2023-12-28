@@ -8,7 +8,7 @@ const Product = () => {
     const [productList, SetProductList] = useState([]);
 
     useEffect(() => {
-        makeAuthenticatedRequest('http://localhost:8080/api/product/', API_METHODS.GET).then((response) => {
+        makeAuthenticatedRequest('api/product/', API_METHODS.GET).then((response) => {
             updateProductListWithImages(response.data)
         })
     }, []);

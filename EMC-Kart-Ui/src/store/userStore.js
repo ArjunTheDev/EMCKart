@@ -63,6 +63,9 @@ const userSlice = createSlice({
         } else {
             state.checkoutProducts.splice(index, 1);
         }
+    },
+    clearCheckout : (state) => {
+        state.checkoutProducts = []
     }
   },
   extraReducers: (builder) => {
@@ -101,6 +104,6 @@ const userSlice = createSlice({
   }
 });
 
-export const { clearUser, addProductTOCheckout } = userSlice.actions;
+export const { clearUser, addProductTOCheckout, clearCheckout } = userSlice.actions;
 
 export default userSlice.reducer;

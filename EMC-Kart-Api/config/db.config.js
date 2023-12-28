@@ -6,5 +6,5 @@ require('dotenv').config();
 //   };
 
 module.exports = {
-    url: 'mongodb://@localhost:27017/' + process.env.DB_NAME
+    url: 'mongodb://localhost:27017/EMCKart'
 };

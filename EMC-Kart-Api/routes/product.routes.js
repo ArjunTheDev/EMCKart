@@ -6,6 +6,9 @@ module.exports = app => {
   
     router.get("/", verifyToken, products.fetchAll);
     router.post("/create", verifyToken, products.create);
+    router.post("/checkoutProducts", products.checkoutProducts);
+    router.post("/verifyCheckout", products.verifyCheckout);
+
 
     app.use("/api/product", router);
 };

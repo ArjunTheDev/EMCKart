@@ -30,14 +30,14 @@ const ProductUpload = () => {
     try {
       dispatch(createProduct({productImage, formData})).then((response) => {
         setSuccessFlag(true)
-        // setMessage("Product uploaded successfully")
-        // setFormData({
-        //   title: '',
-        //   description: '',
-        //   price: '',
-        //   imagePath: null,
-        // })
-        // setPreviewImage(null)
+        setMessage("Product uploaded successfully")
+        setFormData({
+          title: '',
+          description: '',
+          price: '',
+          imagePath: null,
+        })
+        setPreviewImage(null)
       })
     } catch (err) {
       console.error(err)
@@ -61,9 +61,9 @@ const ProductUpload = () => {
 
   return (
       <div className="modal-container bg-white w-96 mx-auto mt-24 p-4 rounded shadow">
+        <h3 className="text-lg text-gray-800 font-bold text-center mb-3">Product Upload</h3>
         {successFlag && <Alert message={message} type="success" showIcon closable />}
         {error && <Alert message={error} type="error" showIcon closable />}
-        <h3 className="text-lg text-gray-800 font-bold text-center mb-3">Product Upload</h3>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title" className="block text-sm font-medium text-gray-700">
             Title

@@ -2,9 +2,9 @@ import axios from 'axios';
 import { auth } from '../config/firebase'
 
 // Function to make a request with an authentication token and request body
-export const makeAuthenticatedRequest = async (url, method, data = []) => {
+export const makeAuthenticatedRequest = async (uri, method, data = []) => {
     try {
-      const reqEndpoint = url
+      const reqEndpoint = `http://localhost:8080/${uri}`
       const response = await axios({
           url: reqEndpoint,
           data: data,

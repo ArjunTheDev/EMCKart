@@ -6,7 +6,7 @@ export const createProduct = createAsyncThunk(('product/create'), async({product
     try {
         const imagePath = await uploadFileOnFirebase(productImage)
         formData.imagePath = imagePath?.metadata?.fullPath
-        const response = await makeAuthenticatedRequest('http://localhost:8080/api/product/create', 'POST', formData)
+        const response = await makeAuthenticatedRequest('api/product/create', 'POST', formData)
 
         return response
     } catch (error) {
