@@ -4,7 +4,7 @@ import { auth } from '../config/firebase'
 // Function to make a request with an authentication token and request body
 export const makeAuthenticatedRequest = async (uri, method, data = []) => {
     try {
-      const reqEndpoint = `http://localhost:8080/${uri}`
+      const reqEndpoint = `${import.meta.env.VITE_LOCAL_URL + uri}`
       const response = await axios({
           url: reqEndpoint,
           data: data,

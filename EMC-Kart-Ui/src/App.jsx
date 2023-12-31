@@ -1,14 +1,14 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import Navbar from './components/common/Navbar'
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
-import Product from './components/Product'
-import Signup from './components/Signup'
-import Login from './components/Login'
-import ProductUpload from './components/ProductUpload'
-import Checkout from './components/Checkout'
+import Product from './components/product/Product'
+import Signup from './components/user/Signup'
+import Login from './components/user/Login'
+import ProductUpload from './components/product/ProductUpload'
+import Checkout from './components/product/Checkout'
 import { useSelector } from 'react-redux'
-import NotFound from './components/Notfound'
-import Final from './components/Final'
+import NotFound from './components/common/NotFound'
+import Final from './components/common/Final'
 
 function App() {
   const { userData } = useSelector((state) => state.user);

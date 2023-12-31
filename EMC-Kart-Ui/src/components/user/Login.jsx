@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { loginUser } from '../store/userStore';
+import { loginUser } from '../../store/userStore';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
   
@@ -27,7 +27,7 @@ const Login = () => {
     <>
       <div className="w-full max-w-md mx-auto">            
         <form className="bg-white rounded px-8 pt-6 pb-8 mb-4">
-          <p className="text-black-700 text-xl text-center font-bold mb-2">EMCkart Login</p>
+          <p className="text-black-700 text-xl text-center font-bold mb-2">EMCKart Login</p>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

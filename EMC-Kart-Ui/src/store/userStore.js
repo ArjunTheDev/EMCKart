@@ -8,14 +8,14 @@ import {
 
 export const loginUser = createAsyncThunk(('user/login'), async(userData) => {
     const firebaseResponse = await firebaseLogin(userData)
-    const userResponse = await axios.post('http://localhost:8080/api/user/login', firebaseResponse.user)
+    const userResponse = await axios.post(`${import.meta.env.VITE_LOCAL_URL}api/user/login`, firebaseResponse.user)
     const finalRes = await userResponse.data
     return finalRes
 });
 
 export const registerUser = createAsyncThunk(('user/register'), async(userData, { rejectWithValue }) => {
     try{
-        const userResponse = await axios.post('http://localhost:8080/api/user/register', userData)
+        const userResponse = await axios.post(`${import.meta.env.VITE_LOCAL_URL}api/user/register`, userData)
         return userResponse
     } catch (error) {
         if (error.response.status >= 400) {

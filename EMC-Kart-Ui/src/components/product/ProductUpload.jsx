@@ -1,7 +1,7 @@
 // src/components/Modal.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createProduct } from '../store/productStore';
+import { createProduct } from '../../store/productStore';
 import { Alert } from 'antd';
 
 const ProductUpload = () => {

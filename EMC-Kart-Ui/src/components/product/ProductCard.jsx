@@ -1,7 +1,7 @@
 // ProductCard.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProductTOCheckout } from '../store/userStore';
+import { addProductTOCheckout } from '../../store/userStore';
 
 const ProductCard = ({product}) => {
   const [isLoading, setIsLoading] = useState(true);

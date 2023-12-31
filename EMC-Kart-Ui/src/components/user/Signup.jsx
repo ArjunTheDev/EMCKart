@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from '../store/userStore';
+import { registerUser } from '../../store/userStore';
 import { useNavigate } from 'react-router-dom';
   
 
@@ -31,7 +31,7 @@ const Signup = () => {
     <>
       <div className="w-full max-w-md mx-auto">            
         <form className="bg-white rounded px-8 pt-6 pb-8 mb-4">
-          <p className="text-black-700 text-xl text-center font-bold mb-2">EMCkart Sign Up</p>
+          <p className="text-black-700 text-xl text-center font-bold mb-2">EMCKart Sign Up</p>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

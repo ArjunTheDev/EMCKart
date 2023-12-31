@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { clearUser } from "../store/userStore";
+import { clearUser } from "../../store/userStore";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
