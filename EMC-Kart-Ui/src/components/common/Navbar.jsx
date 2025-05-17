@@ -19,7 +19,7 @@ const Navbar = () => {
                     { userData?.name ?
                     <div className="flex items-center">
                         <label className="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome {userData?.name}!</label>
-                        {userData?.isAdmin && <button onClick={() => {navigate("/productUpload")}} className="bg-blue-500 text-white p-2 rounded-md mr-2">Add Product</button>}
+                        {userData?.isAdmin && <button onClick={() => {navigate("/productUpload")}} className="bg-blue-600 text-white p-2 rounded-md mr-2">Add Product</button>}
                         <button className="bg-gray-500 hover:bg-gray-700 text-white py-2 px-4 font-medium rounded" onClick={() => dispatch(clearUser())}>Logout</button>
                         <Badge size="small" count={checkoutProducts.length}>
                             <ShoppingCartOutlined style={{ fontSize: '24px', color: '#08c', marginLeft: '5px' }} onClick={() => {navigate("/checkout")}} />
