@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="bg-gray-800 p-4">
+            <nav className="bg-gray-700 p-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <Link to="/"><span className="text-white text-lg font-semibold">EMCKart</span></Link>
